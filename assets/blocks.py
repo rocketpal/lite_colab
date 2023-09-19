@@ -1514,7 +1514,7 @@ Received outputs:
         Example: (Interface)
             demo = gr.Interface(image_generator, gr.Textbox(), gr.Image())
             demo.queue(concurrency_count=3)
-            demo.launch()
+            demo.launch_in_container()
         """
         if default_enabled is not None:
             warnings.warn(
@@ -1637,7 +1637,7 @@ Received outputs:
             def reverse(text):
                 return text[::-1]
             demo = gr.Interface(reverse, "text", "text")
-            demo.launch(share=True, auth=("username", "password"))
+            demo.launch_in_container(share=True, auth=("username", "password"))
         """
         if not self.exited:
             self.__exit__()
